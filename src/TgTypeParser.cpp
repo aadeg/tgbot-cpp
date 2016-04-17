@@ -807,10 +807,10 @@ std::string TgTypeParser::parseInlineKeyboardButton(const InlineKeyboardButton::
 	}
 	string result;
 	result += '{';
-	appendToJson(result, object->text, "text");
-	appendToJson(result, object->url, "url");
-	appendToJson(result, object->callbackData, "callback_data");
-	appendToJson(result, object->switchInlineQuery, "switch_inline_query");
+	appendToJson(result, "text", object->text);
+	appendToJson(result, "url", object->url);
+	appendToJson(result, "callback_data", object->callbackData);
+	appendToJson(result, "switch_inline_query", object->switchInlineQuery);
 	result.erase(result.length() - 1);
 	result += '}';
 	return result;
